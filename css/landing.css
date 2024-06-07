@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;1,200&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,11 +9,10 @@
     text-decoration: none;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
-
 }
 
 :root {
-    --textJudul : italic;
+    --textJudul: italic;
     --muted: #c0bebe;
 }
 
@@ -24,13 +24,13 @@ nav {
     display: flex;
     position: fixed;
     z-index: 10;
-    transition: .2s linear;
+    transition: background-color 0.2s linear;
 }
-nav.hideung{
+
+nav.hideung {
     background-color: #222;
-    transition: .2s linear;
 }
-/* /*Styling Links*/
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -42,14 +42,12 @@ nav.hideung{
 }
 
 .nav-links li a {
-    text-decoration: none;
-    margin: 0 0.7vw;
     color: gold;
     font-weight: bold;
     letter-spacing: 1px;
     margin-left: 20px;
     text-shadow: 1px 1px 1px #6113C3;
-    transition: .3s linear ;
+    transition: color 0.3s linear, text-shadow 0.3s linear;
 }
 
 .nav-links li a:hover {
@@ -57,7 +55,17 @@ nav.hideung{
     text-shadow: 1px 1px 1px gold;
 }
 
-/*Styling Hamburger Icon*/
+.hamburger {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+}
+
 .hamburger div {
     width: 30px;
     height: 3px;
@@ -66,26 +74,18 @@ nav.hideung{
     transition: all 0.3s ease;
 }
 
-.hamburger {
-    display: none;
-}
-
-/*Animating Hamburger Icon on Click*/
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
 
 .toggle .line2 {
-    transition: all 0.7s ease;
     width: 0;
+    transition: all 0.7s ease;
 }
 
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
-
-
-
 
 .header {
     font-family: Helvetica;
@@ -124,20 +124,20 @@ nav.hideung{
 }
 
 .header main .main button {
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     margin-top: 2rem;
     background-color: gold;
     font-size: 2rem;
     color: #1a1a1a;
     text-shadow: 1px 1px 1px white;
     box-shadow: 4px 4px 1px whitesmoke;
-    transition: linear .2s;
+    transition: transform 0.2s linear, box-shadow 0.2s linear;
     font-weight: 400;
 }
 
 .header main .main button:active {
-    transform: scale(.9);
-    box-shadow: 0px 0px 0px #888;
+    transform: scale(0.9);
+    box-shadow: 0 0 0 #888;
 }
 
 .profile,
@@ -158,7 +158,6 @@ nav.hideung{
 .profile .profile-me p {
     font-size: 1.2rem;
     color: var(--muted);
-
 }
 
 .profile .profile-me .center {
@@ -178,14 +177,14 @@ nav.hideung{
     width: 40vw;
     height: 100%;
     box-shadow: -15px 15px 1px whitesmoke;
-    transition: linear .2s;
+    transition: filter 0.2s linear, transform 0.2s linear, margin-right 0.2s linear, box-shadow 0.2s linear;
     filter: grayscale(0);
     position: relative;
 }
 
 .profile .profile-me .anas .pict:hover {
     filter: grayscale();
-    transform: scale(.9);
+    transform: scale(0.9);
     margin-right: 1rem;
     box-shadow: 15px -15px 1px whitesmoke;
 }
@@ -232,7 +231,7 @@ nav.hideung{
     margin-top: 1rem;
     width: 30%;
     height: 20vh;
-    background-color: #ffff;
+    background-color: #fff;
     box-shadow: 5px 5px 5px #222;
 }
 
@@ -264,23 +263,15 @@ nav.hideung{
 .project {
     width: 100%;
     height: 100vh;
-
 }
 
-
-
-
-
-
-/* Laptop */
-@media(max-width : 1366px) {
+@media(max-width: 1366px) {
     html {
         font-size: 75%;
     }
 }
 
-/* Tablet */
-@media(max-width : 768px) {
+@media(max-width: 768px) {
     html {
         font-size: 62.5%;
     }
@@ -293,31 +284,21 @@ nav.hideung{
     }
 
     .profile .profile-me .anas .pict {
-        box-shadow: 0px 0px 0px;
-        transition: linear .2s;
-        transform: scale(.9);
+        box-shadow: none;
+        transform: scale(0.9);
         margin-left: 37%;
-    }
-
-    .profile .profile-me .anas .pict:hover {
-
-        filter: grayscale();
-        box-shadow: 0px 0px 0px;
     }
 
     .profile .profile-me .anas .pict img {
         border: 7px dashed whitesmoke;
         padding: 1rem;
-        transition: .5s ease;
-    }
-
-    .profile .profile-me .anas .pict img {
+        transition: padding 0.5s ease, border-width 0.5s ease;
         width: 18rem;
         height: 25rem;
     }
 
     .profile .profile-me .anas .pict img:hover {
-        padding: .2rem;
+        padding: 0.2rem;
         border-width: 2px;
     }
 
@@ -325,7 +306,6 @@ nav.hideung{
         width: 80%;
         text-align: left;
         font-size: 2.1rem;
-
     }
 
     .skills .me .one,
@@ -335,10 +315,8 @@ nav.hideung{
     }
 }
 
-/* Handphone */
-@media(max-width : 500px) {
+@media(max-width: 500px) {
     .profile .profile-me .anas .pict {
-
         margin-left: 31%;
     }
 
@@ -346,11 +324,9 @@ nav.hideung{
         width: 80%;
         text-align: left;
         font-size: 1.5rem;
-
     }
 }
 
-/*Stying for small screens*/
 @media screen and (max-width: 768px) {
     nav {
         position: fixed;
@@ -359,13 +335,6 @@ nav.hideung{
 
     .hamburger {
         display: block;
-        position: absolute;
-        cursor: pointer;
-        right: 5%;
-        top: 50%;
-        transform: translate(-5%, -50%);
-        z-index: 2;
-        transition: all 0.7s ease;
     }
 
     .nav-links {
@@ -376,12 +345,12 @@ nav.hideung{
         flex-direction: column;
         clip-path: circle(50px at 90% -20%);
         -webkit-clip-path: circle(50px at 90% -10%);
-        transition: all .7s ease-out; 
+        transition: clip-path 0.7s ease-out, -webkit-clip-path 0.7s ease-out;
         pointer-events: none;
     }
 
     .nav-links li a {
-       font-size: 2rem;
+        font-size: 2rem;
     }
 
     .nav-links.open {
